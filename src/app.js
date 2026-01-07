@@ -6,6 +6,11 @@ const {
 } = require("./controllers/chatgptclone.controller");
 
 const { createHealthyMeals } = require("./controllers/fridgechef.controller");
+const {
+  generateYouTubeInsights,
+} = require("./controllers/youtubeinsights.controller");
+
+const { semanticSearch } = require("./controllers/semanticsearch.controller");
 
 const app = express();
 
@@ -16,3 +21,5 @@ app.use(express.json());
 app.post("/openai/emotion", gptAnalyzeEmotions);
 app.post("/openai/chat", generateChatCompletion);
 app.post("/openai/fridge-chef", createHealthyMeals);
+app.post("/openai/youtube-insights", generateYouTubeInsights);
+app.post("/openai/semantic-search", semanticSearch);
